@@ -1,36 +1,61 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const long long MOD = 1e9+7;
- 
-long long power(long long a, long long b, long long m) {
-    a %= m;
+long long binpower(long long a, int n, long long MOD){
+    a %= MOD;
     long long ans = 1;
-    while (b > 0) {
-        if (b % 2 == 1) {
-            ans = (ans * a) % m;
+    while (n > 0) {
+        if (n % 2 == 1) {
+            ans = (ans * a) % MOD;
         }
-        a = (a * a) % m;
-        b /= 2;
+        a = (a * a) % MOD;
+        n>>=1;
     }
     return ans;
 }
 
+
+long long phi(long long n){
+    long long result = n;
+    for (long long i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            while (n % i == 0)
+                n /= i;
+            result -= result / i;
+        }
+    }
+    if (n > 1)
+        result -= result / n;
+    return result;
+}
 int main() {
+    long long r = 1000000016531;
+    long long are[34] = {0};
+    int i = 33;
+    while(r>1)
+    {
+        are[i] = r;
+        r = phi(r);
+        i--;
+    }
+    are[i] = 1;
     int t;
-    cin>>t;
-    while(t--){
-        long long a,n;
-        cin>>a>>n;
-        if(n==1){
-        cout<<a%MOD<<"\n";
-        return 0;
+    cin >> t;
+    while(t--)
+    {
+        long long a;
+        int n;
+        cin >> a >> n;
+        long long res = 1;
+        long long temp = a;
+        long long prev = 1;
+        
+        for(int i = 34-n;i<34;i++)
+        {
+            res = binpower(temp,prev,are[i]);
+            prev = res;
         }
-        long long ans=power(a,a,MOD-(n-2));
-        for(long long i=n-3;i>=0;i--){
-            ans=power(a,ans,MOD-i);
-        }
-        cout<<ans<<endl;
+        cout << res;
     }
     return 0;
 }
