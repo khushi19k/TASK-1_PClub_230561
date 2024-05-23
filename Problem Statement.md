@@ -15,16 +15,16 @@ For each test case, print a single integer — the result of the computation mod
 
 ### Input
 
-\(3\)
-\(2 3\)
-\(3 2\)
-\(10 1\)
+3
+2 3
+3 2
+10 1
 
 ### Output
 
-\(256\)
-\(27\)
-\(10\)
+256
+27
+10
 
 ## Explanation
 
