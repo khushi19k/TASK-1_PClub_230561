@@ -34,6 +34,6 @@ For each test case, print a single integer — the result of the computation mod
 
 ## Constraints
 
-- \( 1 <= t <= 10^6 \)
+- \( 1 <= t <= 100 \)
 - \( 1 <= a <= 10^9 \)
-- \( 1 <= n <= 10^6 \)
+- \( 1 <= n <= 29 \)
