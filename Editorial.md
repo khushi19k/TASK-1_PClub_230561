@@ -85,3 +85,7 @@ int main() {
     }
     return 0;
 }
+
+## Overall time complexity by this method:
+O(tlogn)
+
