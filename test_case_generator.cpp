@@ -1,48 +1,24 @@
-#include <bits/stdc++.h>
+#include "testlib.h"
+#include <iostream>
+ 
 using namespace std;
-
-const int MAX_T = 1e6;
-const long long MAX_A = 1e9;
-const long long MAX_N = 1e6;
-
-int main(int argc, char* argv[]) {
-    if (argc < 9) {
-        cerr << "Usage: " << argv[0] << " -test-count <T> -sum-n <N> -min-a <minA> -max-a <maxA> -min-n <minN> -max-n <maxN>" << endl;
-        return 1;
-    }
-
-    int testCount = 0, sumN = 0, minA = 0, maxA = 0, minN = 0, maxN = 0;
-
-    for (int i = 1; i < argc; i += 2) {
-        string arg = argv[i];
-        if (arg == "-test-count") testCount = atoi(argv[i + 1]);
-        else if (arg == "-sum-n") sumN = atoi(argv[i + 1]);
-        else if (arg == "-min-a") minA = atoi(argv[i + 1]);
-        else if (arg == "-max-a") maxA = atoi(argv[i + 1]);
-        else if (arg == "-min-n") minN = atoi(argv[i + 1]);
-        else if (arg == "-max-n") maxN = atoi(argv[i + 1]);
-        else {
-            cerr << "Unknown argument: " << arg << endl;
-            return 1;
-        }
-    }
-
-    srand(time(0));
-
-    int t = testCount;
+ 
+const int MAX_T = 100;
+const int MAX_N = 29;
+const long long MAX_A = 1000000000LL;
+ 
+int main(int argc, char *argv[])
+{
+    registerGen(argc, argv, 1);
+    int t = rnd.next(MAX_T - 10, MAX_T);
     cout << t << endl;
-
-    while (t--) {
-        long long n = rand() % (maxN - minN + 1) + minN;
-        if (sumN > 0 && sumN < n) {
-            n = sumN;
-        }
-        sumN -= n;
-
-        long long a = rand() % (maxA - minA + 1) + minA;
-
+    for (int i = 0; i < t; ++i)
+    {
+ 
+        long long a = rnd.next(MAX_A - 1000, MAX_A);
+        int n = rnd.next(MAX_N - 7, MAX_N);
         cout << a << " " << n << endl;
     }
-
+ 
     return 0;
 }
