@@ -1,6 +1,6 @@
 # Problem Statement
 
-Calculate the value of \( a^{a^{a^{\cdot^{\cdot^{\cdot}}}}} \) (that is, where the exponentiation is performed \( n-1 \) times on \( a \)) modulo \( 1000000007 \).
+Calculate the value of \( a^{a^{a^{.^{.^{.}}}}} \) (that is, where the exponentiation is performed \( n-1 \) times on \( a \)) modulo \( 1000000007 \).
 
 ## Input
 
