@@ -4,8 +4,8 @@ Calculate the value of \( a^{a^{a^{\cdot^{\cdot^{\cdot}}}}} \) (that is, where t
 
 ## Input
 
-- The first line contains a single integer \( t \) (\( 1 \leq t \leq 10^6 \)) — the number of test cases.
-- Each of the next \( t \) lines contains two integers \( a \) (\( 1 \leq a \leq 10^9 \)) and \( n \) (\( 1 \leq n \leq 10^6 \)).
+- The first line contains a single integer \( t \) (\( 1 <= t <= 100 \)) — the number of test cases.
+- Each of the next \( t \) lines contains two integers \( a \) (\( 1 <= a <= 10^9 \)) and \( n \) (\( 1 <= n <= 29 \)).
 
 ## Output
 
@@ -34,6 +34,6 @@ For each test case, print a single integer — the result of the computation mod
 
 ## Constraints
 
-- \( 1 \leq t \leq 10^6 \)
-- \( 1 \leq a \leq 10^9 \)
-- \( 1 \leq n \leq 10^6 \)
+- \( 1 <= t <= 10^6 \)
+- \( 1 <= a <= 10^9 \)
+- \( 1 <= n <= 10^6 \)
